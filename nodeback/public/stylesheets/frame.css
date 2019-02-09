@@ -1,0 +1,174 @@
+.HolyGrail {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+header {
+    display: inherit;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    background: #0087b4;
+}
+header div {
+    background: #09c;
+    padding: 0 20px;
+    margin: 0 0 0 1px;
+    cursor: pointer;
+}
+#logo,
+#title {
+    margin: 0;
+}
+#logo {
+    background: inherit;
+    padding: 0;
+}
+#logo img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+#title {
+    flex: 1;
+}
+#title a {
+    display: inline-block;
+    line-height: 50px;
+}
+
+.HolyGrail-body {
+    display: flex;
+    flex: 1;
+}
+
+.HolyGrail-content {
+    display: inherit;
+    flex-flow: column wrap;
+    flex: 1;
+}
+.HolyGrail-tag {
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    border-bottom: 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    line-height: 4vh;
+    width: 15vh;
+}
+.HolyGrail-tag:hover {
+    background: #EEEEEE;
+}
+#hash-page {
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    top: 50px;
+    bottom: 0;
+    color: #000000;
+}
+
+#nav-hidden {
+    height: 3vh;
+    background: url("../img/down.png") 50% 50%/2vh 1vh no-repeat;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.HolyGrail-nav,
+.HolyGrail-aside {
+    position: relative;
+    display: inherit;
+    flex-flow: column wrap;
+    order: -1;
+}
+.HolyGrail-nav {
+    flex: 0 0 230px;
+    background: rgba(57, 69, 85, 1);
+}
+.hidden-nav {
+    flex: 0 0 50px;
+}
+.hidden-nav > .HolyGrail-button > span {
+    display: none;
+}
+.HolyGrail-aside {
+    flex: 0 0 180px;
+    background: #EAEDF1;
+    color: #333333;
+    font-size: 12px;
+}
+.HolyGrail-aside span {
+    background: rgb(217, 222, 228);
+    line-height: 70px;
+    font-weight: bold;
+    text-indent: 20px;
+}
+.aside-list > ul > .active {
+    background: #ffffff;
+}
+.aside-li:hover {
+    cursor: pointer;
+    background: #F4F6F8;
+}
+.aside-item {
+    line-height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.item-icon {
+    width: 30px;
+}
+.item-title {
+    width: 138px;
+}
+.HolyGrail-button {
+    display: inherit;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    height: 5vh;
+    line-height: 5vh;
+}
+.HolyGrail-button:hover {
+    background: #425160;
+}
+.HolyGrail-nav .active {
+    background: rgba(24, 154, 202, 1);
+}
+.HolyGrail-nav .active:hover {
+    background: rgba(24, 154, 202, 1);
+}
+.HolyGrail-button img {
+    width: 20px;
+    height: 20px;
+    padding: 0 15px;
+}
+.HolyGrail-button,
+.HolyGrail-aside {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#divCover {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}

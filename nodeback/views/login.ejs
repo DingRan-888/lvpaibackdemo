@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <style>
+        body {
+            background: url(./img/login/bg1.jpg);
+        }
+        .container {
+            height: 350px;
+            margin-top: 100px;
+            width: 400px;
+            background: rgba(255,255,255,.4);
+            border-radius: 15px;
+            
+           
+        }
+        .nowa{
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .btn{
+            margin-top: 20px;
+            width: 300px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .box{
+            position: relative;
+        }
+        h1{
+            margin-bottom: 50px;
+        }
+        .btn:hover{
+            background: #5bc0de;
+        }
+        .alert{
+            position: absolute;
+            top: -40px;
+            left: 30%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>登录</h1>
+        <div class="box">
+    	<form action="/login" method="post">
+            <div class="form-group">
+                <label for="exampleInputusername1">用户名</label>
+                <input type="text" name="username"  autocomplete="off" class="form-control username" id="exampleInputusername1" placeholder="请输入用户名">
+            </div>
+    	 
+    	  <div class="form-group">
+    	    <label for="exampleInputPassword1">密码</label>
+    	    <input type="password" autocomplete="off" class="form-control" id="exampleInputPassword1" placeholder="请输入密码" name="password">
+    	  </div>
+    	  
+    <!-- 	  <div class="checkbox">
+    	    <label>
+    	      <input type="checkbox"> Check me out
+    	    </label>
+    	  </div> -->
+          <% if(isShow){%>
+          <div class="alert alert-danger" role="alert">用户名密码不匹配</div>
+          <% } %>
+    	  <button type="submit" class="btn btn-default">登录</button>
+        </form>
+    </div>
+    </div>
+    
+    <script>
+    	
+    </script>
+  </body>
+</html>

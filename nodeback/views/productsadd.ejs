@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增商品</title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/message.css" />
+    <link rel="stylesheet" href="/stylesheets/frame.css" />
+    <link rel="stylesheet" href="/stylesheets/list.css" />
+    <link rel="stylesheet" href="/stylesheets/table.css" />
+    <link rel="stylesheet" href="/stylesheets/tipsy.css" />
+    <style>
+    main{
+        padding: 10px 50px 50px;
+    }
+    .form-group{
+        width: 400px;
+    }
+    section.list-title{
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        height: 60px;
+    }
+    .l{
+        float: left;
+    }
+    .r{
+        float: right;
+    }
+    th{
+        text-align: center;
+    }
+    </style>
+</head>
+  <body class="HolyGrail">
+    <% include header %>
+    <div class="HolyGrail-body">
+        <% include sidebar %>
+        <main class="HolyGrail-content">
+            <div id="hash-page">
+              <form action="<%= isNew? '/productsadd': '/productsadd/update'%>" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputproductsname">商品名称</label>
+                    <input type="text" class="form-control" autocomplete="off" id="exampleInputproductsname" placeholder="请输入商品名称" name="productsname" value="<%= !isNew?info.productsname:''%>">  
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputproductsprice">商品价格</label>
+                  <input type="text" class="form-control" autocomplete="off" id="exampleInputproductsprice" placeholder="请输入商品价格" name="productsprice" value="<%= !isNew?info.productsprice:''%>">  
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputproductscontent">商品描述</label>
+                  <textarea name="productscontent" placeholder="请输入商品描述" class="form-control" rows="4"><%= !isNew?info.productscontent:''%></textarea>
+                </div>
+                <!--多张图片上传，需加multiple属性，单张不用加-->
+                <div class="form-group">
+                  <label for="exampleInputFile">上传文件</label>
+                  <input type="file" name="myfile" multiple id="exampleInputFile"/>
+                </div>
+          
+                <input type="hidden" value="<%= isNew?'':info._id%>" name="id"/>
+                <input type="hidden" value="<%= isNew?'':info.imgPath%>" name="oldpath"/>
+                <button type="submit" class="btn btn-info">保存</button>
+              </form>
+            </div>
+        </main>
+    </div>
+    <script src="javascripts/jquery.tipsy.js"></script>
+    <script src="javascripts/TipClass.js"></script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+#content {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 12px;
+    padding: 0 15px;
+    color: #000000;
+}
+.contentTitle {
+    display: inherit;
+    width: 100%;
+    padding: 16px 0;
+    min-height: 70px;
+    box-sizing: border-box;
+    font-weight: 500;
+    border-bottom: 1px solid #DDD;
+}
+.contentTitle h5 {
+    display: inherit;
+    text-indent: 8px;
+    border-left: 2px solid #88B7E0;
+    margin: 8px 60px 8px 0;
+    font-weight: 500;
+    align-items: center;
+}
+.contentTitle h5 span {
+    cursor: default;
+    height: 22px;
+}
+.contentTitle h5 span:hover:first-child {
+    cursor: pointer;
+}
+.contentTitle div {
+    padding: 8px 0;
+    display: inherit;
+    justify-content: center;
+    width: 100px;
+    border: 1px solid #666;
+    color: #666;
+    cursor: pointer;
+}
+.contentTitle div:hover {
+    color: #88B7E0;
+    border-color: #88B7E0;
+}
+
+.contentOperation {
+    display: inherit;
+    flex-flow: row wrap;
+    line-height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contentOperation label {
+    margin: 0 20px;
+}
+.contentOperation label:first-child {
+    margin: 0 20px 0 0;
+}
+.contentOperation select,
+.contentOperation input {
+    border: 1px solid #CCCCCC;
+    height: 28px;
+    width: 100px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 6px 0;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition: box-shadow 0.3s ease;
+}
+.contentOperation input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 150px;
+    text-indent: 10px;
+}
+.contentOperation input[type=datetime-local] {
+    text-indent: 0;
+}
+
+i {
+    color: #D0021B;
+    padding: 0 5px;
+}
+.area {
+    display: inherit;
+    flex-flow: inherit;
+}
+.area .contentTitle {
+    border: 0;
+}
+.option, .information {
+    display: inherit;
+    align-items: center;
+    min-height: 40px;
+}
+.information {
+    width: 25%;
+    margin: 0 0 10px 0;
+}
+@media screen and (max-width: 710px) {
+    .information {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 870px) and (min-width: 710px) {
+    .information {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1190px) and (min-width: 870px) {
+    .information {
+        width: 33.33%;
+    }
+}
+.area_table {
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.area_show label,
+.area_show input {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.option label {
+    width: 100px;
+    text-align: right;
+    margin: 0 20px 0 0;
+}
+.information label {
+    width: 30%;
+    text-align: center;
+}
+.option input,
+.option button,
+.option select {
+    width: 30vw;
+    min-width: 200px;
+    border:1px solid #CCCCCC;
+    border-radius: 0;
+    padding: 6px 0;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition:  box-shadow 0.3s ease;
+}
+.option input,
+.option select,
+.information input,
+.information select {
+    text-indent: 10px;
+}
+.option select,
+.information select {
+    height: 28px;
+}
+.option p input {
+    width: 30px;
+    min-width: inherit;
+    margin: 0 10px;
+}
+.information input,
+.information button,
+.information select {
+    width: 70%;
+    border:1px solid #CCCCCC;
+    border-radius: 0;
+    padding: 6px 0;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition:  box-shadow 0.3s ease;
+}
+.option button {
+    box-sizing: content-box;
+    background: #ffffff;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition:  box-shadow 0.3s ease;
+}
+.option textarea {
+    margin: 5px 0;
+    border:1px solid #CCCCCC;
+    border-radius: 0;
+    width: 60vw;
+    height: 60px;
+    padding: 6px;
+    resize: none;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition:  box-shadow 0.3s ease;
+}
+.option span {
+    padding: 0 10px;
+    font-size: 12px;
+    display: none;
+}
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+    outline: 0;
+    border:#87C6F9 1px solid;
+    box-shadow: 0 0 8px rgba(103, 166, 217, 1);
+}
+.warning {
+    outline: 0;
+    border:#E26359 1px solid;
+    box-shadow: 0 0 8px #D0021B;
+}
+.warning + span {
+    color: #D0021B;
+}
+.option input:focus + span {
+    display: inline-block;
+}
+.submit {
+    padding: 20px 0;
+}
+.submit label {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+#submit, #view {
+    border: 0;
+    padding: 10px 0;
+    width: 100px;
+    min-width: 100px;
+    color: #ffffff;
+    background: rgba(103, 166, 217, 1);
+}
+.information:last-child {
+    margin: 0;
+    padding: 0;
+    display: inherit;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .option {
+        flex-flow: row wrap;
+        height: 50px;
+    }
+    .option span {
+        padding: 0 100px;
+        width: 100%;
+    }
+}

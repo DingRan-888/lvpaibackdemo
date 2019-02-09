@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增类型</title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/message.css" />
+    <link rel="stylesheet" href="/stylesheets/frame.css" />
+    <link rel="stylesheet" href="/stylesheets/list.css" />
+    <link rel="stylesheet" href="/stylesheets/table.css" />
+    <link rel="stylesheet" href="/stylesheets/tipsy.css" />
+    <style>
+    main{
+        padding: 10px 50px 50px;
+    }
+    .form-group{
+        width: 400px;
+    }
+    section.list-title{
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        height: 60px;
+    }
+    .l{
+        float: left;
+    }
+    .r{
+        float: right;
+    }
+    th{
+        text-align: center;
+    }
+    .table-bordered tbody tr td, .table-bordered tbody tr th{
+        vertical-align: middle;
+    }
+    </style>
+</head>
+
+<body class="HolyGrail">
+    <%- include("header.ejs",{title:isnew?'新增类型':'修改类型'})%>
+    <div class="HolyGrail-body">
+        <% include sidebar %>
+        <main class="HolyGrail-content">
+            <div id="hash-page">
+                <form action="<%= isnew?'/positionadd':'/positionadd/update'%>" method="post" >
+                    <div class="form-group">
+                        <label for="exampleInputpositionname">类型名称</label>
+                        <input type="text" class="form-control" autocomplete="off" id="exampleInputpositionname" placeholder="请输入类型名称" name="positionname"
+                            value="<%= !isnew?info.positionname:''%>">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputpositioncontent">类型描述</label>
+                        <input type="text" class="form-control" autocomplete="off" id="exampleInputpositioncontent" placeholder="请输入类型描述" name="positioncontent"
+                            value="<%= !isnew?info.positioncontent:''%>">
+                    </div>
+
+                    <input type="hidden" value="<%= !isnew?info._id:''%>" name="id"/>
+                    <button type="submit" class="btn btn-info">保存</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="javascripts/jquery.tipsy.js"></script>
+    <script src="javascripts/TipClass.js"></script>
+</body>
+
+</html>

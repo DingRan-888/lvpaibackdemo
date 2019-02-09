@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型管理</title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/message.css" />
+    <link rel="stylesheet" href="/stylesheets/frame.css" />
+    <link rel="stylesheet" href="/stylesheets/list.css" />
+    <link rel="stylesheet" href="/stylesheets/table.css" />
+    <link rel="stylesheet" href="/stylesheets/tipsy.css" />
+    <style>
+    main{
+        padding: 10px 50px 50px;
+        position: relative;
+    }
+    section.list-title{
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        height: 60px;
+    }
+    .l{
+        float: left;
+    }
+    .r{
+        float: right;
+    }
+    h3.l{
+        margin-right: 20px;
+    }
+    th{
+        text-align: center;
+    }
+    .table-bordered tbody tr td, .table-bordered tbody tr th{
+        vertical-align: middle;
+    }
+    nav.page{
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .pagination{
+        margin: 15px 0;
+    }
+    .search{
+        padding: 0 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        height: 30px;
+    }
+    </style>
+</head>
+
+<body class="HolyGrail">
+    <% include header %>
+    <div class="HolyGrail-body">
+        <% include sidebar %>
+        <main class="HolyGrail-content">
+            <div id="hash-page">
+                <section class="list-title">
+                    <h3 class="l">类型列表</h3>
+
+                    <a href="/positionadd" class="btn btn-info r">新增</a>
+                </section>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>类型名称</th>
+                                <th>类型内容</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for(var i=0;i<list.length; i++){%>
+                                <tr>
+                                    <th scope="row"><%= i+1%></th>
+                                    <td><%= list[i].positionname%></td>
+                                    <td><%= list[i].positioncontent%></td>
+                                    <td>
+                                        <a href="/positionadd/update?id=<%= list[i]._id%>" class="btn btn-warning ">修改</a>
+                                        <a href="/positionadd/delete?id=<%= list[i]._id%>" class="btn btn-danger">删除</a>
+                                    </td>
+                                </tr>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/javascripts/jquery.tipsy.js"></script>
+    <script src="/javascripts/TipClass.js"></script>
+</body>
+
+</html>

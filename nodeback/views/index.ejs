@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/message.css" />
+    <link rel="stylesheet" href="/stylesheets/frame.css" />
+    <link rel="stylesheet" href="/stylesheets/list.css" />
+    <link rel="stylesheet" href="/stylesheets/table.css" />
+    <link rel="stylesheet" href="/stylesheets/tipsy.css" />
+    <!-- <script src="javascripts/methods.min.js"></script>
+    <script src="javascripts/message.js"></script> -->
+  <style>
+    main{
+      position: relative;
+    }
+    main #hash-page p{
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 50px;
+    }
+  </style>
+  </head>
+  <body class="HolyGrail">
+        <% include header %>
+    <div class="HolyGrail-body">
+        <% include sidebar %>
+        <main class="HolyGrail-content">
+            <div id="hash-page">
+                <p>Welcome <%= who %></p>
+            </div>
+        </main>
+    </div>
+    <script src="javascripts/jquery.tipsy.js"></script>
+    <script src="javascripts/TipClass.js"></script>
+</body>
+
+</html>

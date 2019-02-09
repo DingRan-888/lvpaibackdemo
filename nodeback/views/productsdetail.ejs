@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品详情</title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/message.css" />
+    <link rel="stylesheet" href="/stylesheets/frame.css" />
+    <link rel="stylesheet" href="/stylesheets/list.css" />
+    <link rel="stylesheet" href="/stylesheets/table.css" />
+    <link rel="stylesheet" href="/stylesheets/tipsy.css" />
+    <!-- <script src="javascripts/methods.min.js"></script>
+    <script src="javascripts/message.js"></script> -->
+  <style>
+    main{
+      position: relative;
+      padding: 10px 50px 50px;
+    }
+  </style>
+  </head>
+  <body class="HolyGrail">
+        <% include header %>
+    <div class="HolyGrail-body">
+        <% include sidebar %>
+        <main class="HolyGrail-content">
+            <div id="hash-page">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><%= info.productsname%></h3>
+                  </div>
+                  <div class="panel-body">
+                    <p><%= info.productscontent%></p>
+        
+                    <% for(var i=0;i<info.imgPath.length;i++){ %>
+                      <img src="<%= info.imgPath[i]%>" alt="">
+                    <%}%>
+                  </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="javascripts/jquery.tipsy.js"></script>
+    <script src="javascripts/TipClass.js"></script>
+</body>
+
+</html>

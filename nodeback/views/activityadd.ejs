@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增活动</title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/message.css" />
+    <link rel="stylesheet" href="/stylesheets/frame.css" />
+    <link rel="stylesheet" href="/stylesheets/list.css" />
+    <link rel="stylesheet" href="/stylesheets/table.css" />
+    <link rel="stylesheet" href="/stylesheets/tipsy.css" />
+    <style>
+    main{
+        padding: 10px 50px 50px;
+    }
+    .form-group{
+        width: 400px;
+    }
+    section.list-title{
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        height: 60px;
+    }
+    .l{
+        float: left;
+    }
+    .r{
+        float: right;
+    }
+    th{
+        text-align: center;
+    }
+    .table-bordered tbody tr td, .table-bordered tbody tr th{
+        vertical-align: middle;
+    }
+    </style>
+</head>
+
+<body class="HolyGrail">
+    <%- include("header.ejs",{title:isnew?'新增活动':'修改活动'})%>
+    <div class="HolyGrail-body">
+        <% include sidebar %>
+        <main class="HolyGrail-content">
+            <div id="hash-page">
+                <form action="<%= isnew?'/activityadd':'/activityadd/update'%>" method="post" >
+                    <div class="form-group">
+                        <label for="exampleInputactivityname">活动名称</label>
+                        <input type="text" class="form-control" autocomplete="off" id="exampleInputsalesname" placeholder="请输入活动名称" name="activityname"
+                            value="<%= !isnew?activityinfo.activityname:''%>">
+                    </div>   
+                    <div class="form-group">
+                        <label for="exampleInputtel">活动内容</label>
+                        <input type="text" class="form-control" autocomplete="off" id="exampleInputcontent" placeholder="请输入活动内容" name="activitycontent"
+                            value="<%= !isnew?activityinfo.activitycontent:''%>">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputactivityposition">类型</label>
+                        <select id="exampleInputactivityposition" class="form-control" name="activitypositionID">
+                            <%for(var i = 0;i<positioninfo.length;i++){%>
+                                <%if( positioninfo[i]._id.toString() == activityinfo.activitypositionID ){%>
+                                    <option value="<%= positioninfo[i]._id%>" selected><%= positioninfo[i].positionname%></option>
+                                <%}else{%>
+                                    <option value="<%= positioninfo[i]._id%>"><%= positioninfo[i].positionname%></option>
+                                <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+
+                    <input type="hidden" value="<%= !isnew?activityinfo._id:''%>" name="id"/>
+                    <button type="submit" class="btn btn-info">保存</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/javascripts/jquery.tipsy.js"></script>
+    <script src="/javascripts/TipClass.js"></script>
+</body>
+
+</html>
